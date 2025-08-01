@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import * as AOS from 'aos';
+import { initFlowbite } from 'flowbite/lib/esm/components';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,15 @@ import * as AOS from 'aos';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'simplerent';
 
-  constructor(){
- AOS.init();
-}
+  constructor() {
+    AOS.init();
+
+  }
+  ngOnInit(): void {
+    initFlowbite();
+  }
+
 }
