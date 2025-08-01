@@ -1,0 +1,460 @@
+#nav {
+  background: #008080;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.contact {
+  padding: 100px 0;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.contact-info .section-header {
+  text-align: left;
+  margin-bottom: 40px;
+}
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: #f9fafb; /* light gray background */
+  border: 1px solid #e5e7eb; /* gray-200 */
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 12px rgba(0, 128, 128, 0.05);
+  max-width: 100%;
+  overflow: hidden;
+}
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.contact-item:hover {
+  background-color: #e0f7fa; /* light cyan hover */
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 150, 136, 0.1); /* subtle shadow on hover */
+}
+
+.contact-icon {
+  background-color: #e0f2f1; /* light teal background */
+  border-radius: 50%;
+  padding: 12px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  width: 48px;
+}
+
+.contact-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: #00796b; /* teal-700 */
+  stroke-width: 1.5;
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-text .font-bold {
+  font-size: 1rem;
+  color: #111827; /* gray-900 */
+  margin-bottom: 4px;
+}
+
+.contact-value {
+  font-size: 0.95rem;
+  color: #374151; /* gray-700 */
+  word-wrap: break-word;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .hero-stats {
+    gap: 30px;
+  }
+
+  .contact-content {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu,
+  .nav-actions {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .hero {
+  padding: 120px 0 60px;
+  
+  color: rgb(86, 203, 176);
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 128, 128, 0.6); /* Teal overlay */
+  z-index: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-stats {
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .properties-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .feature-card,
+  .property-card,
+  .testimonial-card {
+    margin: 0 10px;
+  }
+
+  .contact-form {
+    padding: 30px 20px;
+  }
+}
+
+.testimonials {
+  padding: 100px 0; /* replaced --section-padding */
+  background: #f2f2f2; /* replaced --light-gray */
+}
+
+.testimonials-grid {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 22px;
+}
+.testimonial-card {
+  background: linear-gradient(135deg, #e0f7f5, #fefcf6);
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 128, 128, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative top-left icon circle */
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 165, 0, 0.1); /* orange circle */
+  border-radius: 50%;
+  z-index: 0;
+  transition: opacity 0.3s ease;
+}
+
+.testimonial-card:hover::before {
+  opacity: 0.3;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 128, 128, 0.3);
+  background: linear-gradient(135deg, #d6f4f2, #fff9ed);
+}
+
+.stars {
+  color: #FF9900;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #043028;
+  margin-bottom: 25px;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.author-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffa726; /* orange border */
+}
+
+.author-name {
+  font-weight: 600;
+  color: #004d40; /* deep teal */
+  margin-bottom: 3px;
+}
+
+.author-location {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+
+
+/* Container for cards */
+.service-section {
+  display: grid;
+  grid-template-columns: 1fr; /* Default: 1 column */
+  gap: 24px;
+  padding: 2rem 1rem;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Medium screen: 2 columns */
+@media (min-width: 768px) {
+  .service-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large screen: 4 columns */
+@media (min-width: 1024px) {
+  .service-section {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Individual card */
+.service-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.service-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Card image */
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Card content */
+.service-card-content {
+  padding: 20px;
+}
+
+/* Card title */
+.service-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+/* Card description */
+.service-card-desc {
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.6;
+}
+
+#FAQ {
+  background-color: #f9fafb;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+  text-align: center;
+}
+
+#FAQ .custom-subheading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #004d40; /* deep teal */
+  margin-bottom: 1.5rem;
+}
+
+#FAQ > div > div {
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fefefe;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 2.5rem 2.5rem;
+  box-shadow: 0 6px 18px rgba(0, 128, 128, 0.06);
+  text-align: left;
+}
+
+/* FAQ list */
+#FAQ ol {
+  color: #374151; /* gray-700 */
+  font-size: 1.1rem;
+  line-height: 1.7;
+  list-style-position: inside;
+}
+
+/* Each FAQ item */
+#FAQ li {
+  padding: 1.2rem 0;
+  border-bottom: 1px solid #d1d5db; /* gray-300 */
+  cursor: default;
+  transition: background-color 0.3s ease;
+}
+
+/* Remove border for last item */
+#FAQ li:last-child {
+  border-bottom: none;
+}
+
+/* Question style */
+#FAQ dt {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #00796b; /* teal */
+  margin-bottom: 0.4rem;
+  transition: color 0.3s ease;
+}
+
+/* Answer style */
+#FAQ dd {
+  color: #555;
+  font-weight: 400;
+}
+
+/* Hover effect on question */
+#FAQ li:hover dt {
+  color: #ffa726; /* orange */
+}
+
+/* Responsive margin adjustment */
+@media (max-width: 768px) {
+  #FAQ > div > div {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 2rem 1.5rem;
+  }
+}
+
+.about-paragraph {
+  font-size: 1.25rem; /* Tailwind: text-xl */
+  line-height: 2rem;  /* Tailwind: leading-8 */
+  color: #374151;     /* Tailwind: text-gray-700 */
+  margin-top: 1.5rem; /* Tailwind: mt-6 */
+  transition: all 0.3s ease-in-out;
+}
+
+.about-paragraph.highlight {
+  color: #000; /* Tailwind: text-black */
+  font-weight: 500;
+}
+
+.about-paragraph:hover {
+  transform: translateY(-2px);
+}
+
