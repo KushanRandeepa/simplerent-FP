@@ -1,0 +1,612 @@
+<nav class="fixed top-0 left-0 w-full z-50 border-gray-200  shadow-md " data-aos="fade-down" data-aos-duration="800"
+  id="nav" data-aos="fade-down">
+  <div class=" max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 fixed-top" data-aos="fade-down"
+    data-aos-duration="800">
+    <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
+      <span class="self-center text-2xl font-semibold whitespace-nowrap text-orange-300">Simpalerent</span>
+    </a>
+    <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+      <button type="button" class="btn-custom">Login</button>
+      <button data-collapse-toggle="navbar-cta" type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:bg-orange-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-controls="navbar-cta" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+      </button>
+    </div>
+    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+      <ul class="flex flex-col font-medium p-4 md:p-0 mt-4  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 ">
+        <li>
+          <a (click)="scrollTo('home')" href="#home" class="nav-link">Home</a>
+        </li>
+        <li>
+          <a (click)="scrollTo('about')" href="#" class="nav-link">About Us</a>
+        </li>
+        <li>
+          <a (click)="scrollTo('sevices')" href="#Services" class="nav-link">Services</a>
+        </li>
+        <li>
+          <a (click)="scrollTo('testimonials')" href="#testimonials" class="nav-link">Testimonials</a>
+        </li>
+        <li>
+          <a (click)="scrollTo('contact')" href="#contact" class="nav-link">Contact US</a>
+        </li>
+        <li>
+          <a (click)="scrollTo('FAQ')" href="#FAQ" class="nav-link">FAQ</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section id="home" class="hero-section relative overflow-hidden">
+  <div data-aos="fade-up" data-aos-duration="2000"
+    class="max-w-screen-xl mx-auto px-4 py-24 flex flex-col lg:flex-row items-center lg:items-start">
+
+    <!-- Left: Text Content -->
+    <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="2000"
+      class="w-full lg:w-1/2 mb-12 lg:mb-0 text-left">
+      <h1 class="text-4xl md:text-5xl font-extrabold  mb-6 hero-heading">
+        Welcome to Simplerent
+      </h1>
+      <h2 class="custom-subheading-hero " data-aos="fade-right" data-aos-duration="2000">
+        Your Trusted Platform for Hassle-Free Rentals in Sri Lanka
+      </h2>
+      <p class="text-gray-600 text-lg mb-8 " data-aos="fade-right" data-aos-duration="2000">
+        At Simple Rent, we make finding and listing rental spaces easier than ever. Whether you're a property owner
+        looking to earn passive income or a traveler or business in search of the perfect place, we connect people
+        with places — quickly, safely, and simply.
+      </p>
+
+      <div class="flex gap-4" data-aos="fade-up" data-aos-duration="2000">
+<a class="btn-custom" [routerLink]="'/login'">Sign In</a>
+        <a href="#" class="btn-outline">Sign Up →</a>
+      </div>
+    </div>
+
+    <!-- Right: Background Image -->
+    <div data-aos="zoom-out-up" data-aos-duration="2000"
+      class="w-full lg:w-1/2 h-80 lg:h-[500px] bg-cover bg-center rounded-lg shadow-md"
+      style="background-image: url('images/pexels-pixabay-276514.jpg');">
+    </div>
+
+  </div>
+</section>
+
+<style>
+@keyframes gradient-bg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-section {
+  position: relative;
+  background-image: 
+    linear-gradient(-45deg, rgba(255, 222, 233, 0.5), rgba(181, 255, 252, 0.5), rgba(198, 255, 221, 0.5), rgba(251, 215, 134, 0.5)),
+    url('/images/pexels-pam-santos-2153999487-33165057.jpg'); /* replace with actual image path */
+  background-size: 300% 300%, cover;
+  background-position: 0% 50%, center;
+  animation: gradient-bg 15s ease infinite;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+}
+</style>
+
+
+
+
+
+<section id="about">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16" data-aos="fade-up" data-aos-duration="3000">
+    <h2 class="custom-subheading pb-10">About Us</h2>
+
+    <div class="relative isolate overflow-hidden bg-green-50 px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+
+      <div class="absolute inset-0 -z-10 overflow-hidden">
+        <svg aria-hidden="true"
+          class="absolute top-0 left-[max(50%,25rem)] h-256 w-512 -translate-x-1/2 mask-[radial-gradient(64rem_64rem_at_top,white,transparent)] stroke-gray-200">
+          <defs>
+            <pattern id="e813992c-7d03-4cc4-a2bd-151760b470a0" width="200" height="200" x="50%" y="-1"
+              patternUnits="userSpaceOnUse">
+              <path d="M100 200V.5M.5 .5H200" fill="none" />
+            </pattern>
+          </defs>
+          <svg x="50%" y="-1" class="overflow-visible fill-green-100">
+            <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
+              stroke-width="0" />
+          </svg>
+          <rect width="100%" height="100%" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" stroke-width="0" />
+        </svg>
+      </div>
+
+      <div
+        class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+
+        <div
+          class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+          <div class="lg:pr-4">
+            <div class="lg:max-w-lg">
+
+              <h3 class="mt-2  custom-subheading font-semibold tracking-tight text-pretty text-gray-900 ">Smart
+                Rentals. Made Simple.</h3>
+              <p class="about-paragraph" data-aos="fade-up" data-aos-duration="1200">
+                Founded by Nimshan and Pasindu, Simple Rent was born from a shared vision: to make
+                renting more accessible, trustworthy, and seamless for everyone in Sri Lanka. Inspired
+                by platforms like Airbnb, we aim to connect property owners with people seeking
+                short- or long-term stays, event spaces, or commercial rentals all in one professional, easy-to-use
+                platform.
+              </p>
+              <p class="about-paragraph highlight" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">
+                We're here to empower both renters and owners with tools, transparency, and local customer support you
+                can count on.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="fade-left"
+     data-aos-anchor="#example-anchor"
+     data-aos-offset="1000"
+     data-aos-duration="1500"
+          class="-mt-12 -ml-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+          <img src="/images/pexels-pixabay-276514.jpg" alt=""
+            class="w-3xl max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-228" />
+        </div>
+
+        <div 
+          class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+          <div class="lg:pr-4">
+            <div class="max-w-xl text-base/7 text-gray-600 lg:max-w-lg " class="about-paragraph highlight" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">
+
+              <ul role="list" class="mt-8 space-y-8 text-gray-600">
+                <li class="flex gap-x-3">
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                    class="mt-1 size-5 flex-none text-indigo-600">
+                    <path
+                      d="M5.5 17a4.5 4.5 0 0 1-1.44-8.765 4.5 4.5 0 0 1 8.302-3.046 3.5 3.5 0 0 1 4.504 4.272A4 4 0 0 1 15 17H5.5Zm3.75-2.75a.75.75 0 0 0 1.5 0V9.66l1.95 2.1a.75.75 0 1 0 1.1-1.02l-3.25-3.5a.75.75 0 0 0-1.1 0l-3.25 3.5a.75.75 0 1 0 1.1 1.02l1.95-2.1v4.59Z"
+                      clip-rule="evenodd" fill-rule="evenodd" />
+                  </svg>
+                  <span>
+                    <strong class="font-semibold text-gray-900">Easy Listing & Booking.</strong>
+                    Property owners can list rentals in minutes, while tenants browse and book with a few clicks — no
+                    calls, no paperwork.
+                  </span>
+
+                </li>
+
+                <li class="flex gap-x-3">
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                    class="mt-1 size-5 flex-none text-indigo-600">
+                    <path
+                      d="M10 1a4.5 4.5 0 0 0-4.5 4.5V9H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-.5V5.5A4.5 4.5 0 0 0 10 1Zm3 8V5.5a3 3 0 1 0-6 0V9h6Z"
+                      clip-rule="evenodd" fill-rule="evenodd" />
+                  </svg>
+                  <span>
+                    <strong class="font-semibold text-gray-900">Secure Payments & Trust.</strong>
+                    All transactions are encrypted and transparent. Reviews, verified IDs, and secure messaging ensure
+                    trust on both sides.
+                  </span>
+                </li>
+              </ul>
+
+              <h2 class="mt-16 text-2xl font-bold tracking-tight text-gray-900">Our Mission</h2>
+              <p class="mt-6">
+                To build a trusted digital platform that simplifies renting and empowers local communities.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sevices">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16" data-aos="fade-up" data-aos-duration="2000">
+    <h2 class="custom-subheading pb-10">Our Services</h2>
+
+    <div class="service-section">
+      <div *ngFor="let item of serviceCard" class="  service-card " data-aos="zoom-in-down" data-aos-duration="1000">
+        <a href="#">
+          <img class="rounded-t-lg" [src]="item.icon" alt="Service Icon" />
+        </a>
+        <div class="service-card-content">
+          <a href="#">
+            <h5 class="service-card-title">{{item.title}}</h5>
+          </a>
+          <p class="service-card-desc ">{{item.description}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="justify-center mt-5 pt-5" data-aos="fade-up" data-aos-duration="2000">
+      <h3 class="custom-subheading p-4">Why Choose Simple Rent?</h3>
+      <ul class="inline-block space-y-4 card text-gray-500 bg-gray-50  border-gray-200  rounded-lg p-8 md:p-12">
+        <li *ngFor="let item of benifitsList" class="flex items-center   space-x-3 rtl:space-x-reverse">
+          <svg class="w-7 h-7 text-green-500">
+            <use xlink:href="#icon-check-solid"></use>
+          </svg>
+          <span>{{item}}</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="card" data-aos="fade-up-right" data-aos-duration="2000">
+          <div class="flex items-center justify-center">
+            <svg class="w-7 h-7 text-green-500">
+              <use xlink:href="#icon-gust"></use>
+            </svg>
+            <h2 class="text-gray-900 text-3xl font-extrabold mb-2">For Guests</h2>
+          </div>
+          <ul class="inline-block space-y-4 text-xl text-left ">
+            <li *ngFor="let item of guestList" class="flex items-start gap-2 mb-2">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0">
+                <use xlink:href="#icon-check-solid"></use>
+              </svg>
+              <span>{{item}}</span>
+            </li>
+          </ul>
+          <a href="#" class="text-blue-600 hover:underline font-medium text-lg inline-flex items-center">Readmore
+            <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              fill="none" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9" />
+            </svg>
+          </a>
+        </div>
+        <div class="card" data-aos="fade-up-left" data-aos-duration="2000">
+          <div class="flex items-center justify-center">
+            <svg class="w-7 h-7 text-green-500">
+              <use xlink:href="#icon-gust"></use>
+            </svg>
+            <h2 class="text-gray-900 text-3xl font-extrabold mb-2">For Hosts</h2>
+          </div>
+          <ul class="inline-block space-y-4 text-xl text-left ">
+            <li *ngFor="let item of hoststList" class="flex items-start gap-2 mb-2">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0">
+                <use xlink:href="#icon-check-solid"></use>
+              </svg>
+              <span>{{item}}</span>
+            </li>
+          </ul>
+          <a href="#" class="text-blue-600 hover:underline font-medium text-lg inline-flex items-center pt-3">Readmore
+            <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              fill="none" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="testimonials">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16" data-aos="fade-up" data-aos-duration="2000">
+    <h2 class="custom-subheading ">Testimonials </h2>
+    <div class="testimonials-grid ">
+      <div class="testimonial-card ">
+        <div class="testimonial-content">
+          <div class="stars">
+            <span>★★★★★</span>
+          </div>
+          <p class="testimonial-text">
+            "Absolutely incredible experience! The villa exceeded our expectations
+            with its stunning ocean views and impeccable service. Can't wait to return!"
+          </p>
+        </div>
+        <div class="testimonial-author">
+          <img src="" alt="nima" class="author-avatar">
+          <div class="author-info">
+            <div class="author-name">Sarah Johnson</div>
+            <div class="author-location">United Kingdom</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <div class="stars">
+            <span>★★★★★</span>
+          </div>
+          <p class="testimonial-text">
+            "Perfect location for our family vacation. The property was spotless,
+            well-equipped, and the beach access made it magical for the kids."
+          </p>
+        </div>
+        <div class="testimonial-author">
+          <img src="" alt="nima" class="author-avatar">
+          <div class="author-info">
+            <div class="author-name">Michael Chen</div>
+            <div class="author-location">Australia</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <div class="stars">
+            <span>★★★★★</span>
+          </div>
+          <p class="testimonial-text">
+            "Outstanding hospitality and attention to detail. The booking process
+            was seamless and the property management team was incredibly helpful."
+          </p>
+        </div>
+        <div class="testimonial-author">
+          <img src="" alt="nima" class="author-avatar">
+          <div class="author-info">
+            <div class="author-name">Emma Rodriguez</div>
+            <div class="author-location">Germany</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="contact">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16" data-aos="fade-up" data-aos-duration="2000">
+    <div class="contact-content">
+      <div class="contact-info">
+        <div class="ps-5 mb-18">
+          <h2 class="custom-subheading text-left">Ready to Start Your Sri Lankan Adventure?</h2>
+          <p class="section-description">
+            Got a question? Need help listing a property or making a booking?
+            Our friendly support team is here for you.
+          </p>
+        </div>
+
+        <div class="contact-details bg-gray-50 border border-gray-200 rounded-lg p-8 md:p-12 ">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </div>
+            <div class="contact-text">
+              <div class="text-left font-bold">Call Us</div>
+              <div class="contact-value">+94 11 234 5678</div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </div>
+            <div class="">
+              <div class="text-left font-bold">Email Us</div>
+              <div class="contact-value">nimshan.lk</div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <div class="contact-text">
+              <div class="text-left font-bold">Visit Us</div>
+              <div class="contact-value">123 Galle Road, Colombo 03, Sri Lanka</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form bg-gray-50 border border-gray-200 rounded-lg p-8 md:p-12 ">
+        <form action="#" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
+          <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+            <div class="sm:col-span-2">
+              <label for="email" class="block text-sm/6 font-semibold text-gray-900">Email</label>
+              <div class="mt-2.5">
+                <input id="email" type="email" name="email" autocomplete="email"
+                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-teal-600" />
+              </div>
+            </div>
+            <div class="sm:col-span-2">
+              <label for="message" class="block text-sm/6 font-semibold text-gray-900">Message</label>
+              <div class="mt-2.5">
+                <textarea id="message" name="message" rows="4"
+                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-teal-600"></textarea>
+              </div>
+            </div>
+            <div class="flex gap-x-4 sm:col-span-2">
+              <div class="flex h-6 items-center">
+                <div
+                  class="group relative inline-flex w-8 shrink-0 rounded-full bg-gray-200 p-px inset-ring inset-ring-gray-900/5 outline-offset-2 outline-teal-600 transition-colors duration-200 ease-in-out has-checked:bg-teal-600 has-focus-visible:outline-2">
+                  <span
+                    class="size-4 rounded-full bg-white shadow-xs ring-1 ring-gray-900/5 transition-transform duration-200 ease-in-out group-has-checked:translate-x-3.5"></span>
+                  <input id="agree-to-policies" type="checkbox" name="agree-to-policies" aria-label="Agree to policies"
+                    class="absolute inset-0 appearance-none focus:outline-hidden" />
+                </div>
+              </div>
+              <label for="agree-to-policies" class="text-sm/6 text-gray-600">
+                By selecting this, you agree to our
+                <a href="#" class="font-semibold whitespace-nowrap text-teal-500">privacy policy</a>.
+              </label>
+            </div>
+          </div>
+          <div class="mt-10">
+            <button type="submit" class="block w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold
+                          focus-visible:outline-2 focus-visible:outline-offset-2 btn-custom">
+              Let's talk
+            </button>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="FAQ">
+  <div class="faq-container" data-aos="fade-up" data-aos-duration="3000">
+    <h2 class="custom-subheading">FAQ</h2>
+    <div class="faq-box">
+      <ol class="faq-list">
+        <li *ngFor="let item of faqList; index as i">
+          <dt class="faq-question">{{ item.question }}</dt>
+          <dd class="faq-answer">{{ item.answer }}</dd>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<footer class="" id="nav">
+  <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+    <div class="md:flex md:justify-between">
+      <div class="mb-6 md:mb-0">
+        <a href="https://flowbite.com/" class="flex items-center">
+          <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 me-3" alt="FlowBite Logo" />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap ">Simplerent</span>
+        </a>
+      </div>
+      <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+        <div>
+          <h2 class="mb-6 text-sm font-semibold text-white">Quick links</h2>
+          <ul class="text-gray-400 font-medium">
+            <li class="">
+              <a (click)="scrollTo('home')" href="#home" class="nav-link ">Home</a>
+            </li>
+            <li class="">
+              <a (click)="scrollTo('about')" href="#about" class="nav-link">About Us</a>
+            </li>
+            <li class="mb-1">
+              <a (click)="scrollTo('service')" href="#Services" class="nav-link ">Services</a>
+            </li>
+            <li class="mb-1">
+              <a (click)="scrollTo('testimonials')" href="#testimonials" class="nav-link ">Testimonials</a>
+            </li>
+            <li class="mb-1">
+              <a (click)="scrollTo('contact')" href="#contact" class="nav-link ">Contact US</a>
+            </li>
+            <li class="mb-1">
+              <a (click)="scrollTo('FAQ')" href="#FAQ" class="nav-link ">FAQ</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="mb-6 text-sm font-semibold text-white">Follow us</h2>
+          <ul class="text-gray-400 font-medium">
+            <li class="mb-4">
+              <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
+            </li>
+            <li>
+              <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Discord</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="mb-6 text-sm font-semibold text-white">Legal</h2>
+          <ul class="text-gray-400 font-medium">
+            <li class="mb-4">
+              <a href="#" class="hover:underline">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr class="my-6 border-gray-200 sm:mx-auto  lg:my-8" />
+    <div class="sm:flex sm:items-center sm:justify-between">
+      <span class="text-sm text-gray-300 sm:text-center">© 2023 <a href="https://flowbite.com/"
+          class="hover:underline">Simplerent™</a>. All Rights Reserved.
+      </span>
+      <div class="flex mt-4 sm:justify-center sm:mt-0">
+        <a href="#" class=" hover:text-gray-900 text-white">
+          <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+            viewBox="0 0 8 19">
+            <path fill-rule="evenodd"
+              d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
+              clip-rule="evenodd" />
+          </svg>
+          <span class="sr-only">Facebook page</span>
+        </a>
+        <a href="#" class=" hover:text-gray-900 text-white ms-5">
+          <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+            viewBox="0 0 21 16">
+            <path
+              d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z" />
+          </svg>
+          <span class="sr-only">Discord community</span>
+        </a>
+        <a href="#" class=" hover:text-gray-900 text-white ms-5">
+          <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+            viewBox="0 0 20 17">
+            <path fill-rule="evenodd"
+              d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z"
+              clip-rule="evenodd" />
+          </svg>
+          <span class="sr-only">Twitter page</span>
+        </a>
+        <a href="#" class=" hover:text-gray-900 text-white ms-5">
+          <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+            viewBox="0 0 20 20">
+            <path fill-rule="evenodd"
+              d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z"
+              clip-rule="evenodd" />
+          </svg>
+          <span class="sr-only">GitHub account</span>
+        </a>
+        <a href="#" class=" hover:text-gray-900 text-white ms-5">
+          <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+            viewBox="0 0 20 20">
+            <path fill-rule="evenodd"
+              d="M10 0a10 10 0 1 0 10 10A10.009 10.009 0 0 0 10 0Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.094 20.094 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM8 1.707a8.821 8.821 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.758 45.758 0 0 0 8 1.707ZM1.642 8.262a8.57 8.57 0 0 1 4.73-5.981A53.998 53.998 0 0 1 9.54 7.222a32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.64 31.64 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM10 18.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 13.113 11a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z"
+              clip-rule="evenodd" />
+          </svg>
+          <span class="sr-only">Dribbble account</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+ <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="icon-check" viewBox="0 0 24 24">
+        <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" />
+    </symbol>
+</svg>
+
+<svg class="w-6 h-1/6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="display: none;"
+    fill="currentColor" viewBox="0 0 18 20">
+    <symbol id="icon-gust" viewBox="0 0 24 24">
+        <path
+            d="M16 0H4a2 2 0 0 0-2 2v1H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4.5a3 3 0 1 1 0 6 3 3 0 0 1 0-6ZM13.929 17H7.071a.5.5 0 0 1-.5-.5
+             3.935 3.935 0 1 1 7.858 0 .5.5 0 0 1-.5.5Z" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6"  style="display: none;" >
+    <symbol id="icon-check-solid" viewBox="0 0 24 24">
+        <path fill="currentColor" fill-rule="evenodd"
+            d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+            clip-rule="evenodd" />
+    </symbol>
+</svg>
+
+ <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"  style="display: none;" fill="none" viewBox="0 0 14 10">
+    <symbol id="icon-arrow">  
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+             d="M1 5h12m0 0L9 1m4 4L9 9" />
+    </symbol>
+</svg> 

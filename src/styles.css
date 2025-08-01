@@ -1,1 +1,316 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+/* === Custom Button Styles === */
+.btn-custom {
+  padding: 0.75rem 1.5rem; /* py-3 px-5 */
+  margin-inline-start: 1rem; 
+  background-color: #FFB300; /* Amber Orange */
+  color: white;
+  font-size: 0.875rem;       /* text-sm */
+  font-weight: 500;          /* medium */
+  border-radius: 0.5rem;     /* rounded-lg */
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-custom:hover {
+  background-color: #FFD971; /* Slightly darker */
+}
+/* Focus state */
+.btn-custom:focus {
+  outline: #FFD971;
+  box-shadow: 0 0 0 4px rgba(247, 255, 92, 0.4); /* Teal focus ring */
+}
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  .btn-custom {
+    background-color: #FFB300; /* Dark teal or ocean teal */
+  }
+  .btn-custom:hover {
+    background-color: #FFD971;
+  }
+  .btn-custom:focus {
+    box-shadow: 0 0 0 4px rgba(255, 179, 0, 0.5); /* Amber focus ring in dark */
+  }
+}
+
+.btn-outline {
+  padding: 0.75rem 1.25rem; /* py-3 px-5 */
+  margin-inline-start: 1rem; /* sm:ms-4 */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  color: #2C2C2C; /* text-gray-900 */
+  background-color: #ffffff; /* bg-white */
+  border: 1px solid #e5e7eb; /* border-gray-200 */
+  border-radius: 0.5rem; /* rounded-lg */
+  transition: all 0.3s ease;
+  z-index: 0;
+}
+
+.btn-outline:hover {
+  background-color: #f7d162; /* hover:bg-gray-100 */
+  color: #000000; /* hover:text-blue-700 */
+}
+
+.btn-outline:focus {
+  outline: none;
+  z-index: 10;
+  box-shadow: 0 0 0 4px #eede4d; /* focus:ring-gray-100 */
+}
+
+
+/* === Navigation Link === */
+.nav-link {
+  display: block;
+  padding: 0.5rem 0.75rem; /* py-2 px-3 */
+  color: white;
+  border-radius: 0.125rem; /* rounded-sm */
+  transition: all 0.3s ease;
+}
+@media (min-width: 768px) {
+  .nav-link {
+    padding: 0; /* md:p-0 */
+  }
+  .nav-link:hover {
+    background-color: transparent;
+    color: #FFCC80; /* md:hover:text-orange-200 */
+  }
+}
+
+
+
+/* Light mode hover */
+.nav-link:hover {
+    background-color: transparent;
+    color: #FFB300; /* hover:bg-gray-100 */
+}
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .nav-link {
+    color: white; /* dark:text-white */
+  }
+  .nav-link:hover {
+    background-color: #374151; /* dark:hover:bg-gray-700 */
+    color: white; /* dark:hover:text-white */
+  }
+  @media (min-width: 768px) {
+    .nav-link:hover {
+      background-color: transparent; /* md:dark:hover:bg-transparent */
+      color: #FFD971; /* md:dark:hover:text-blue-500 */
+    }
+  }
+}
+
+
+/* === Custom Heading (h1) === */
+h1.custom-heading {
+  margin-bottom: 1rem;
+  font-size: 2.25rem;         /* text-4xl */
+  font-weight: 800;           /* font-extrabold */
+  letter-spacing: -0.01562em; /* tracking-tight */
+  line-height: 1;             /* leading-none */
+  color: #111827;             /* text-gray-900 */
+  font-family: 'Poppins', sans-serif; /* Custom font */
+  transition: color 0.3s ease;
+}
+@media (min-width: 768px) {
+  h1.custom-heading {
+    font-size: 3rem;          /* md:text-5xl */
+  }
+}
+@media (min-width: 1024px) {
+  h1.custom-heading {
+    font-size: 3.75rem;       /* lg:text-6xl */
+  }
+}
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  h1.custom-heading {
+    color: #FFFFFF;           /* dark:text-white */
+  }
+}
+
+
+
+/* === H2: Section Subheading === */
+h2.custom-subheading {
+  margin-bottom: 1rem;
+  font-size: 1.875rem;     /* 30px */
+  font-weight: 700;        /* semi-bold */
+  line-height: 1.2;
+  color: #008080;          /* dark gray */
+  font-family: 'Poppins', sans-serif;
+}
+@media (min-width: 768px) {
+  h2.custom-subheading {
+    font-size: 2.25rem;    /* 36px (md+) */
+  }
+}
+h2.custom-subheading-hero {
+  margin-bottom: 1rem;
+  font-size: 1.875rem;     /* 30px */
+  font-weight: 700;        /* semi-bold */
+  line-height: 1.2;
+  color: rgb(241, 226, 93);          /* dark gray */
+  font-family: 'Poppins', sans-serif;
+}
+@media (min-width: 768px) {
+  h2.custom-subheading {
+    font-size: 2.25rem;    /* 36px (md+) */
+  }
+}
+
+
+/* === H3: Smaller Subheading or Card Title === */
+h3.custom-subheading {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;      /* 20px */
+  font-weight: 600;        /* medium-bold */
+  color: #007C91;          /* Teal Blue (brand primary) */
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -0.3px;
+}
+@media (min-width: 768px) {
+  h3.custom-subsubheading {
+    font-size: 1.5rem;     /* 24px (md+) */
+  }
+}
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  h2.custom-subheading,
+  h3.custom-subsubheading {
+    color: #FFFFFF;
+  }
+}
+
+
+
+/* === Custom Paragraph Style === */
+p.custom-paragraph {
+  margin-bottom: 2rem;
+  font-size: 1.125rem;        /* text-lg */
+  font-weight: 400;           /* font-normal */
+  color: #808183;             /* text-gray-500 */
+  font-family: 'Poppins', sans-serif; /* Optional: Custom font */
+  padding-left: 0;
+  padding-right: 0;
+  transition: color 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  p.custom-paragraph {
+    padding-left: 4rem;       /* sm:px-16 */
+    padding-right: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  p.custom-paragraph {
+    font-size: 1.25rem;       /* lg:text-xl */
+    padding-left: 12rem;      /* lg:px-48 */
+    padding-right: 12rem;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  p.custom-paragraph {
+    color: #9CA3AF;           /* dark:text-gray-400 */
+  }
+}
+
+
+.card {
+  background: linear-gradient(135deg, #e0f7f5, #fefcf6);
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 128, 128, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+  padding: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Optional decorative circle like in testimonial */
+.card::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 165, 0, 0.1); /* light orange accent */
+  border-radius: 50%;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.card:hover::before {
+  opacity: 0.25;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 26px rgba(0, 128, 128, 0.25);
+  background: linear-gradient(135deg, #d6f4f2, #fff9ed);
+}
+
+/* Optional content inside the card (for structure) */
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #004d40; /* deep teal */
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+
+.card-icon {
+  font-size: 2rem;
+  color: #008080;
+  margin-bottom: 16px;
+}
+
+/* Responsive layout if using in a grid */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.hero-heading {
+  background: linear-gradient(90deg, #26061d, #181812, #6c0d68, #3a2a03);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-text 5s ease infinite;
+  font-weight: 800;
+}
+
+@keyframes gradient-text {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
