@@ -49,6 +49,8 @@
   border-radius: 0.5rem; /* rounded-lg */
   transition: all 0.3s ease;
   z-index: 0;
+    cursor: pointer;
+
 }
 
 .btn-outline:hover {
@@ -155,7 +157,7 @@ h2.custom-subheading-hero {
   font-size: 1.875rem;     /* 30px */
   font-weight: 700;        /* semi-bold */
   line-height: 1.2;
-  color: rgb(241, 226, 93);          /* dark gray */
+  color:  #FFB300;        /* dark gray */
   font-family: 'Poppins', sans-serif;
 }
 @media (min-width: 768px) {
@@ -292,7 +294,7 @@ p.custom-paragraph {
 }
 
 .hero-heading {
-  background: linear-gradient(90deg, #26061d, #181812, #6c0d68, #3a2a03);
+  background: linear-gradient(90deg, #26061d,  #FFB300, #6c0d68, #073f34);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -311,6 +313,9 @@ p.custom-paragraph {
     background-position: 0% center;
   }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

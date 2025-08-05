@@ -1,11 +1,12 @@
-import { NgFor } from '@angular/common';
+import { NgFor, NgStyle } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { initFlowbite } from 'flowbite';
+import { SearchComponent } from "../../commen/search/search.component";
 
 @Component({
   selector: 'app-landing-page',
-  imports: [RouterLink,NgFor],
+  imports: [RouterLink, NgFor, SearchComponent, NgStyle],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
 })
@@ -13,6 +14,7 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit(): void {
        initFlowbite();
+       this.startImageSlider();
   }
 
   scrollTo(sectionId: string) {
@@ -49,23 +51,23 @@ export class LandingPageComponent implements OnInit {
   {
     title: 'Fast Booking',
     description: 'Book your stay in seconds with our optimized system.',
-    icon: '/images/pexels-pixabay-276514.jpg' 
+    icon: '/assets/img/demo-image-1.jpg'
   },
   {
     title: 'second card',
     description: 'Get the best deals for a comfortable experience.',
-    icon: '/images/pexels-pixabay-276514.jpg'
+    icon: '/assets/img/demo-image-1.jpg'
   },
   {
     title: 'Affordable Rates',
     description: ',Get the best deals for a comfortable experience.',
-    icon: '/images/pexels-pixabay-276514.jpg'
+    icon: '/assets/img/demo-image-1.jpg'
   },
   
   {
     title: 'Affordable Rates',
     description: 'Get the best deals for a comfortable experience.',
-    icon: '/images/pexels-pixabay-276514.jpg'
+    icon: '/assets/img/demo-image-1.jpg'
   }
 ];
 
@@ -86,6 +88,23 @@ faqList:faq[]=[
     answer:'A: Homes, apartments, workspaces, shops, venues, and more'
   }
 ]
+
+ imageList: string[] = [
+    'assets/img/beach.jpg',
+    'assets/img/pexels-eslames.jpg',
+    'assets/img/pexels-lighthouse.jpg',
+    'assets/img/waterfall.jpg'
+  ];
+  currentImage: string = this.imageList[0];
+  index: number = 0;
+
+
+  startImageSlider(): void {
+    setInterval(() => {
+      this.index = (this.index + 1) % this.imageList.length;
+      this.currentImage = this.imageList[this.index];
+    }, 5000);
+  }
 
 
 
