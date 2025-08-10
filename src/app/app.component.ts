@@ -14,6 +14,8 @@ export class AppComponent implements OnInit {
 
   constructor() {
     AOS.init();
+           initFlowbite();
+
 
   }
   ngOnInit(): void {

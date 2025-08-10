@@ -1,14 +1,11 @@
-<nav class="fixed top-0 left-0 w-full z-50 border-gray-200  shadow-md " 
-  id="nav" >
-  <div class=" max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 fixed-top" 
-    >
+<nav class="fixed top-0 left-0 w-full z-50 border-gray-200  shadow-md " id="nav">
+  <div class=" max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 fixed-top">
     <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
       <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
       <span class="self-center text-2xl font-semibold whitespace-nowrap text-orange-300">Simpalerent</span>
     </a>
     <div class="flex  md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-      <button type="button" class="btn-custom" [routerLink]="'/login'">Sign In</button>
-      <button type="button" class="btn-outline hidden md:inline-block" [routerLink]="'/signup'">Sign Up →</button>
+<button class="btn-custom">SignIn</button>
 
       <button data-collapse-toggle="navbar-cta" type="button"
         class="inline- items-center p-2 w-10 h-10 justify-center text-sm rounded-lg lg:hidden hover:bg-orange-100 focus:outline-none focus:ring-2 "
@@ -25,12 +22,13 @@
         <li>
           <a (click)="scrollTo('home')" href="#home" class="nav-link">Home</a>
         </li>
+          <li>
+          <a (click)="scrollTo('sevices')" href="#Services" class="nav-link">Services</a>
+        </li>
         <li>
           <a (click)="scrollTo('about')" href="#" class="nav-link">About Us</a>
         </li>
-        <li>
-          <a (click)="scrollTo('sevices')" href="#Services" class="nav-link">Services</a>
-        </li>
+      
         <li>
           <a (click)="scrollTo('testimonials')" href="#testimonials" class="nav-link">Testimonials</a>
         </li>
@@ -44,12 +42,11 @@
     </div>
   </div>
 </nav>
-     
 
 <section id="home" class="   hero-section ">
-
+  <app-search></app-search>
   <div data-aos="fade-up" data-aos-duration="2000"
-    class="max-w-screen-xl mx-auto px-4 py-14 flex flex-col lg:flex-row items-center lg:items-start">
+    class="max-w-screen-xl mx-auto px-4 py-14 flex flex-col lg:flex-row items-center lg:items-start lg:mt-6">
     <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="2000"
       class="w-full lg:w-1/2 mb-12 lg:mb-0 text-left py-20">
       <h1 class="text-4xl md:text-5xl font-extrabold  mb-6 hero-heading py">
@@ -64,24 +61,95 @@
         with places — quickly, safely, and simply.
       </p>
     </div>
-
-   <div
-  [ngStyle]="{ 'background-image': 'url(' + currentImage + ')' }"
-  
-  class="w-full lg:w-1/2 h-80 lg:h-[500px] bg-cover bg-center rounded-lg shadow-md
-         transition-opacity duration-2000 ease-in-out"
-  [class.opacity-0]="isFading"
-  [class.opacity-100]="!isFading"
->
-</div>
-
+    <div [ngStyle]="{ 'background-image': 'url(' + currentImage + ')' }" class="w-full lg:w-1/2 h-80 lg:h-[500px] bg-cover bg-center rounded-lg shadow-md
+         transition-opacity duration-2000 ease-in-out" [class.opacity-0]="isFading" [class.opacity-100]="!isFading">
+    </div>
   </div>
 </section>
 
 
+<section id="service">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16" data-aos="fade-up" data-aos-duration="2000">
+    <h2 class="custom-subheading ">Services </h2>
 
+    <div class="service-section">
+      <div *ngFor="let item of serviceCard" class="  service-card " data-aos="zoom-in-down" data-aos-duration="1000">
+        <a href="#">
+          <img class="rounded-t-lg" [src]="item.icon" alt="Service Icon" />
+        </a>
+        <div class="service-card-content">
+          <a href="#">
+            <h5 class="service-card-title">{{item.title}}</h5>
+          </a>
+          <p class="service-card-desc ">{{item.description}}</p>
+        </div>
+      </div>
+    </div>
 
+    <div class="justify-center " data-aos="fade-up" data-aos-duration="2000">
+      <h3 class="custom-subheading p-1">Why Choose Simple Rent?</h3>
+      <ul class="inline-block space-y-4 card text-gray-500 bg-gray-50  border-gray-200  rounded-lg p-8 md:p-12">
+        <li *ngFor="let item of benifitsList" class="flex items-center   space-x-3 rtl:space-x-reverse">
+          <svg class="w-7 h-7 text-green-500">
+            <use xlink:href="#icon-check-solid"></use>
+          </svg>
+          <span>{{item}}</span>
+        </li>
+      </ul>
+    </div>
 
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="card" data-aos-duration="2000">
+          <div class="flex items-center justify-center">
+            <svg class="w-7 h-7 text-green-500">
+              <use xlink:href="#icon-gust"></use>
+            </svg>
+            <h2 class="text-gray-900 text-3xl font-extrabold mb-2">For Guests</h2>
+          </div>
+          <ul class="inline-block space-y-4 text-xl text-left ">
+            <li *ngFor="let item of guestList" class="flex items-start gap-2 mb-2">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0">
+                <use xlink:href="#icon-check-solid"></use>
+              </svg>
+              <span>{{item}}</span>
+            </li>
+          </ul>
+          <a href="#" class="text-blue-600 hover:underline font-medium text-lg inline-flex items-center">Readmore
+            <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              fill="none" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9" />
+            </svg>
+          </a>
+        </div>
+        <div class="card" data-aos-duration="2000">
+          <div class="flex items-center justify-center">
+            <svg class="w-7 h-7 text-green-500">
+              <use xlink:href="#icon-gust"></use>
+            </svg>
+            <h2 class="text-gray-900 text-3xl font-extrabold mb-2">For Hosts</h2>
+          </div>
+          <ul class="inline-block space-y-4 text-xl text-left ">
+            <li *ngFor="let item of hoststList" class="flex items-start gap-2 mb-2">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0">
+                <use xlink:href="#icon-check-solid"></use>
+              </svg>
+              <span>{{item}}</span>
+            </li>
+          </ul>
+          <a href="#" class="text-blue-600 hover:underline font-medium text-lg inline-flex items-center pt-3">Readmore
+            <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              fill="none" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="about">
   <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16" data-aos="fade-up" data-aos-duration="3000">
@@ -185,150 +253,29 @@
   </div>
 </section>
 
-<section id="sevices">
-  <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16" data-aos="fade-up" data-aos-duration="2000">
-    <h2 class="custom-subheading pb-10">Our Services</h2>
-
-    <div class="service-section">
-      <div *ngFor="let item of serviceCard" class="  service-card " data-aos="zoom-in-down" data-aos-duration="1000">
-        <a href="#">
-          <img class="rounded-t-lg" [src]="item.icon" alt="Service Icon" />
-        </a>
-        <div class="service-card-content">
-          <a href="#">
-            <h5 class="service-card-title">{{item.title}}</h5>
-          </a>
-          <p class="service-card-desc ">{{item.description}}</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="justify-center mt-5 pt-5" data-aos="fade-up" data-aos-duration="2000">
-      <h3 class="custom-subheading p-4">Why Choose Simple Rent?</h3>
-      <ul class="inline-block space-y-4 card text-gray-500 bg-gray-50  border-gray-200  rounded-lg p-8 md:p-12">
-        <li *ngFor="let item of benifitsList" class="flex items-center   space-x-3 rtl:space-x-reverse">
-          <svg class="w-7 h-7 text-green-500">
-            <use xlink:href="#icon-check-solid"></use>
-          </svg>
-          <span>{{item}}</span>
-        </li>
-      </ul>
-    </div>
-
-    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="card" data-aos="fade-up-right" data-aos-duration="2000">
-          <div class="flex items-center justify-center">
-            <svg class="w-7 h-7 text-green-500">
-              <use xlink:href="#icon-gust"></use>
-            </svg>
-            <h2 class="text-gray-900 text-3xl font-extrabold mb-2">For Guests</h2>
-          </div>
-          <ul class="inline-block space-y-4 text-xl text-left ">
-            <li *ngFor="let item of guestList" class="flex items-start gap-2 mb-2">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0">
-                <use xlink:href="#icon-check-solid"></use>
-              </svg>
-              <span>{{item}}</span>
-            </li>
-          </ul>
-          <a href="#" class="text-blue-600 hover:underline font-medium text-lg inline-flex items-center">Readmore
-            <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-              fill="none" viewBox="0 0 14 10">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9" />
-            </svg>
-          </a>
-        </div>
-        <div class="card" data-aos="fade-up-left" data-aos-duration="2000">
-          <div class="flex items-center justify-center">
-            <svg class="w-7 h-7 text-green-500">
-              <use xlink:href="#icon-gust"></use>
-            </svg>
-            <h2 class="text-gray-900 text-3xl font-extrabold mb-2">For Hosts</h2>
-          </div>
-          <ul class="inline-block space-y-4 text-xl text-left ">
-            <li *ngFor="let item of hoststList" class="flex items-start gap-2 mb-2">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0">
-                <use xlink:href="#icon-check-solid"></use>
-              </svg>
-              <span>{{item}}</span>
-            </li>
-          </ul>
-          <a href="#" class="text-blue-600 hover:underline font-medium text-lg inline-flex items-center pt-3">Readmore
-            <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-              fill="none" viewBox="0 0 14 10">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
 <section id="testimonials">
   <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16" data-aos="fade-up" data-aos-duration="2000">
     <h2 class="custom-subheading ">Testimonials </h2>
     <div class="testimonials-grid ">
-      <div class="testimonial-card ">
+      <div *ngFor="let item of testimonialList" class="testimonial-card ">
         <div class="testimonial-content">
           <div class="stars">
             <span>★★★★★</span>
           </div>
           <p class="testimonial-text">
-            "Absolutely incredible experience! The villa exceeded our expectations
-            with its stunning ocean views and impeccable service. Can't wait to return!"
+           {{item.description}}
           </p>
         </div>
         <div class="testimonial-author">
-          <img src="/assets/img/demo-image-1.jpg" alt="nima" class="author-avatar">
+          <img [src]="item.img" alt="nima" class="author-avatar">
           <div class="author-info">
-            <div class="author-name">Sarah Johnson</div>
-            <div class="author-location">United Kingdom</div>
+            <div class="author-name">{{item.name}}</div>
+            <div class="author-location">{{item.location}}</div>
           </div>
         </div>
       </div>
 
-      <div class="testimonial-card">
-        <div class="testimonial-content">
-          <div class="stars">
-            <span>★★★★★</span>
-          </div>
-          <p class="testimonial-text">
-            "Perfect location for our family vacation. The property was spotless,
-            well-equipped, and the beach access made it magical for the kids."
-          </p>
-        </div>
-        <div class="testimonial-author">
-          <img src="/assets/img/demo-image-1.jpg" alt="nima" class="author-avatar">
-          <div class="author-info">
-            <div class="author-name">Michael Chen</div>
-            <div class="author-location">Australia</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-content">
-          <div class="stars">
-            <span>★★★★★</span>
-          </div>
-          <p class="testimonial-text">
-            "Outstanding hospitality and attention to detail. The booking process
-            was seamless and the property management team was incredibly helpful."
-          </p>
-        </div>
-        <div class="testimonial-author">
-          <img src="/assets/img/demo-image-1.jpg" alt="nima" class="author-avatar">
-          <div class="author-info">
-            <div class="author-name">Emma Rodriguez</div>
-            <div class="author-location">Germany</div>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </div>
 </section>

@@ -1,19 +1,20 @@
 import { NgFor, NgStyle } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { initFlowbite } from 'flowbite';
 import { SearchComponent } from "../../commen/search/search.component";
+import { initFlowbite } from 'flowbite/lib/esm/components';
 
 @Component({
   selector: 'app-landing-page',
-  imports: [RouterLink, NgFor, NgStyle],
+  imports: [RouterLink, NgFor, NgStyle, SearchComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
 })
 export class LandingPageComponent implements OnInit {
 
   ngOnInit(): void {
-       initFlowbite();
+        initFlowbite();
+    
        this.startImageSlider();
   }
 
@@ -71,6 +72,7 @@ export class LandingPageComponent implements OnInit {
   }
 ];
 
+
 faqList:faq[]=[
   {question:'Is Simple Rent free to use?',
     answer:'A: Browsing is free. Listing and booking may include service fees (shown during checkout).'
@@ -88,7 +90,24 @@ faqList:faq[]=[
     answer:'A: Homes, apartments, workspaces, shops, venues, and more'
   }
 ]
-
+testimonialList:testimonial[]=[
+  { name: 'Michael Chen ',
+    location:'Australia',
+    description: '"Perfect location for our family vacation. The property was spotless,well-equipped, and the beach access made it magical for the kids."',
+    img: '/assets/img/demo-image-1.jpg'
+  },
+  { name: 'Michael Chen ',
+    location:'Australia',
+    description: '"Perfect location for our family vacation. The property was spotless,well-equipped, and the beach access made it magical for the kids."',
+    img: '/assets/img/demo-image-1.jpg'
+  },
+  { name: 'Michael Chen ',
+    location:'Australia',
+    description: '"Perfect location for our family vacation. The property was spotless,well-equipped, and the beach access made it magical for the kids."',
+    img: '/assets/img/demo-image-1.jpg'
+  },
+  
+]
  images: string[] = [
     'assets/img/beach.jpg',
     'assets/img/pexels-eslames.jpg',
@@ -132,5 +151,11 @@ interface Card {
 interface faq{
   question:string,
   answer:string
+}
+interface testimonial{
+  name:string,
+  location:string,
+  description:string,
+  img:string
 }
 
