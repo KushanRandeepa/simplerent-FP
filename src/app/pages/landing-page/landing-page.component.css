@@ -4,9 +4,10 @@
 
 html {
   scroll-behavior: smooth;
-   overflow-x: hidden;
+  overflow-x: hidden;
 }
 
+/*contact css*/
 .contact {
   padding: 100px 0;
 }
@@ -26,8 +27,8 @@ html {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  background-color: #f9fafb; /* light gray background */
-  border: 1px solid #e5e7eb; /* gray-200 */
+  background-color: #f9fafb; 
+  border: 1px solid #e5e7eb; 
   border-radius: 16px;
   padding: 32px;
   box-shadow: 0 4px 12px rgba(0, 128, 128, 0.05);
@@ -45,13 +46,13 @@ html {
 }
 
 .contact-item:hover {
-  background-color: #e0f7fa; /* light cyan hover */
+  background-color: #e0f7fa;
   transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0, 150, 136, 0.1); /* subtle shadow on hover */
+  box-shadow: 0 8px 16px rgba(0, 150, 136, 0.1); 
 }
 
 .contact-icon {
-  background-color: #e0f2f1; /* light teal background */
+  background-color: #e0f2f1; 
   border-radius: 50%;
   padding: 12px;
   flex-shrink: 0;
@@ -484,7 +485,7 @@ html {
       rgba(198, 255, 221, 0.5), 
       rgba(251, 215, 134, 0.5)
     ),
-    url('/assets/img/bg-image-1.jpg');
+    url('../../../assets/img/bg-image-1.jpg');
   background-size: 300% 300%, cover;
   background-position: 0% 50%, center;
   animation: gradient-bg 15s ease infinite;

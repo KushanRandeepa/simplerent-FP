@@ -3,18 +3,19 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SearchComponent } from "../../commen/search/search.component";
 import { initFlowbite } from 'flowbite/lib/esm/components';
+import { RouterOutlet } from "@angular/router";
 
 @Component({
   selector: 'app-landing-page',
-  imports: [RouterLink, NgFor, NgStyle, SearchComponent],
+  imports: [RouterLink, NgFor, NgStyle, SearchComponent, RouterOutlet],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
 })
 export class LandingPageComponent implements OnInit {
 
+
   ngOnInit(): void {
         initFlowbite();
-    
        this.startImageSlider();
   }
 
