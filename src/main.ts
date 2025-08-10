@@ -7,5 +7,5 @@ bootstrapApplication(AppComponent, appConfig)
 
 
 
-//   ng build --base-href /simplerent/
-// npx angular-cli-ghpages --dir=dist/simplerent
+//   ng build --base-href /simplerent-FP/
+// npx angular-cli-ghpages --dir=dist/simplerent/browser

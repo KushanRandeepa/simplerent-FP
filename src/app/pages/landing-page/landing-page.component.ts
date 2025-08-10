@@ -6,7 +6,7 @@ import { SearchComponent } from "../../commen/search/search.component";
 
 @Component({
   selector: 'app-landing-page',
-  imports: [RouterLink, NgFor, SearchComponent, NgStyle],
+  imports: [RouterLink, NgFor, NgStyle],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
 })
@@ -89,22 +89,29 @@ faqList:faq[]=[
   }
 ]
 
- imageList: string[] = [
+ images: string[] = [
     'assets/img/beach.jpg',
     'assets/img/pexels-eslames.jpg',
     'assets/img/pexels-lighthouse.jpg',
     'assets/img/waterfall.jpg'
   ];
-  currentImage: string = this.imageList[0];
-  index: number = 0;
+  currentImage = this.images[0];
+  currentIndex = 0;
+
+  isFading = false;
+  private intervalId?: any;
 
 
   startImageSlider(): void {
-    setInterval(() => {
-      this.index = (this.index + 1) % this.imageList.length;
-      this.currentImage = this.imageList[this.index];
+    this.intervalId = setInterval(() => {
+      this.isFading = true;  
+      setTimeout(() => {
+        this.currentIndex = (this.currentIndex + 1) % this.images.length;
+        this.currentImage = this.images[this.currentIndex];
+        this.isFading = false; // fade in
+      }, 1500);
     }, 5000);
-  }
+  } 
 
 
 

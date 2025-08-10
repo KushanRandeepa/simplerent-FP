@@ -1,17 +1,17 @@
-<nav class="fixed top-0 left-0 w-full z-50 border-gray-200  shadow-md " data-aos="fade-down" data-aos-duration="800"
-  id="nav" data-aos="fade-down">
-  <div class=" max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 fixed-top" data-aos="fade-down"
-    data-aos-duration="800">
+<nav class="fixed top-0 left-0 w-full z-50 border-gray-200  shadow-md " 
+  id="nav" >
+  <div class=" max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 fixed-top" 
+    >
     <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
       <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
       <span class="self-center text-2xl font-semibold whitespace-nowrap text-orange-300">Simpalerent</span>
     </a>
     <div class="flex  md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
       <button type="button" class="btn-custom" [routerLink]="'/login'">Sign In</button>
-            <button type="button" class="btn-outline" [routerLink]="'/signup'">Sign Up →</button>
+      <button type="button" class="btn-outline hidden md:inline-block" [routerLink]="'/signup'">Sign Up →</button>
 
       <button data-collapse-toggle="navbar-cta" type="button"
-        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:bg-orange-100 focus:outline-none focus:ring-2 "
+        class="inline- items-center p-2 w-10 h-10 justify-center text-sm rounded-lg lg:hidden hover:bg-orange-100 focus:outline-none focus:ring-2 "
         aria-controls="navbar-cta" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -20,8 +20,8 @@
         </svg>
       </button>
     </div>
-    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
-      <ul class="flex flex-col font-medium p-4 md:p-0 mt-4  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 ">
+    <div class="items-center justify-between hidden w-full lg:flex md:w-auto lg:order-1" id="navbar-cta">
+      <ul class="flex flex-col font-medium p-4 lg:p-0 mt-4  lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 ">
         <li>
           <a (click)="scrollTo('home')" href="#home" class="nav-link">Home</a>
         </li>
@@ -46,12 +46,10 @@
 </nav>
      
 
-<section id="home" class="hero-section relative overflow-hidden">
-   <app-search></app-search>
+<section id="home" class="   hero-section ">
 
   <div data-aos="fade-up" data-aos-duration="2000"
     class="max-w-screen-xl mx-auto px-4 py-14 flex flex-col lg:flex-row items-center lg:items-start">
-    <!-- Left: Text Content -->
     <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="2000"
       class="w-full lg:w-1/2 mb-12 lg:mb-0 text-left py-20">
       <h1 class="text-4xl md:text-5xl font-extrabold  mb-6 hero-heading py">
@@ -65,46 +63,22 @@
         looking to earn passive income or a traveler or business in search of the perfect place, we connect people
         with places — quickly, safely, and simply.
       </p>
-
     </div>
 
-
-
-    <div [ngStyle]="{ 'background-image': 'url(' + currentImage + ')' }" data-aos="zoom-in" 
-      class="w-full lg:w-1/2 h-80 lg:h-[500px] bg-cover bg-center rounded-lg shadow-md">
-    </div>
-
+   <div
+  [ngStyle]="{ 'background-image': 'url(' + currentImage + ')' }"
+  
+  class="w-full lg:w-1/2 h-80 lg:h-[500px] bg-cover bg-center rounded-lg shadow-md
+         transition-opacity duration-2000 ease-in-out"
+  [class.opacity-0]="isFading"
+  [class.opacity-100]="!isFading"
+>
+</div>
 
   </div>
 </section>
 
-<style>
-  @keyframes gradient-bg {
-    0% {
-      background-position: 0% 50%;
-    }
 
-    50% {
-      background-position: 100% 50%;
-    }
-
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  .hero-section {
-    position: relative;
-    background-image:
-      linear-gradient(-45deg, rgba(255, 222, 233, 0.5), rgba(181, 255, 252, 0.5), rgba(198, 255, 221, 0.5), rgba(251, 215, 134, 0.5)),
-      url('/assets/img/bg-image-1.jpg');
-    background-size: 300% 300%, cover;
-    background-position: 0% 50%, center;
-    animation: gradient-bg 15s ease infinite;
-    background-repeat: no-repeat;
-    background-blend-mode: overlay;
-  }
-</style>
 
 
 
@@ -156,10 +130,9 @@
             </div>
           </div>
         </div>
-
         <div data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="1000" data-aos-duration="1500"
           class="-mt-12 -ml-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
-          <img src="/assets/img/demo-image-1.jpg" alt=""
+          <img src="assets/img/demo-image-1.jpg" alt="demo image"
             class="w-3xl max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-228" />
         </div>
 
@@ -359,7 +332,6 @@
     </div>
   </div>
 </section>
-
 
 <section id="contact">
   <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16" data-aos="fade-up" data-aos-duration="2000">
