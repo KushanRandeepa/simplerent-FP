@@ -1,1 +1,43 @@
-<p>pre-signup-page works!</p>
+<div class="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+  <!-- Add flex and justify-center here to center the grid horizontally -->
+  <div class="flex justify-center w-full">
+    <div class="grid md:grid-cols-2 gap-10 max-w-5xl w-full">
+      <a  routerLink="/signup-as-guest">
+      <div class="card" data-aos-duration="2000">
+        <div class="flex items-center justify-center mb-4">
+          <svg class="w-7 h-7 text-green-500">
+            <use xlink:href="#icon-gust"></use>
+          </svg>
+          <h2 class="text-gray-900 text-3xl font-extrabold ml-3 custom-subheading">Sign Up as a Guest</h2>
+        </div>
+        <ul class="inline-block space-y-4 text-xl text-left ">
+          <li class="flex items-start gap-2 mb-2">
+            <svg class="w-6 h-6 text-green-500 flex-shrink-0">
+              <use xlink:href="#icon-check-solid"></use>
+            </svg>
+            <span>Explore and enjoy our services quickly without creating a full account. Perfect for browsing, booking, or trying out features hassle-free.</span>
+          </li>
+        </ul>
+      </div>
+      </a>
+      <a href="" routerLink="/signup-as-host">
+      <div class="card" data-aos-duration="2000">
+        <div class="flex items-center justify-center mb-4">
+          <svg class="w-7 h-7 text-green-500">
+            <use xlink:href="#icon-gust"></use>
+          </svg>
+          <h2 class="text-gray-900 text-3xl font-extrabold ml-3 custom-subheading">Sign Up as a Host</h2>
+        </div>
+        <ul class="inline-block space-y-4 text-xl text-left ">
+          <li class="flex items-start gap-2 mb-2">
+            <svg class="w-6 h-6 text-green-500 flex-shrink-0">
+              <use xlink:href="#icon-check-solid"></use>
+            </svg>
+            <span>Join us as a service provider to manage your offerings, connect with customers, and grow your business.</span>
+          </li>
+        </ul>
+      </div>
+      </a>
+    </div>
+  </div>
+</div>

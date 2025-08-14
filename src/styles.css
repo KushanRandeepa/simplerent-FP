@@ -7,7 +7,7 @@
 /* === Amber Premium Solid Button === */
 .btn-custom {
   padding: 0.75rem 1.6rem;
-  margin-inline-start: 1rem;
+  /* margin-inline-start: 1rem; */
   background: linear-gradient(135deg, #FFB300 0%, #FFC93C 100%);
   color: #fff;
   font-size: 0.95rem;
@@ -16,7 +16,7 @@
   border: none;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(255, 179, 0, 0.35),
-              inset 0 -2px 4px rgba(0,0,0,0.15);
+  inset 0 -2px 4px rgba(0,0,0,0.15);
   transition: all 0.25s ease;
 }
 
@@ -157,8 +157,6 @@ h1.custom-heading {
     color: #FFFFFF;           /* dark:text-white */
   }
 }
-
-
 
 /* === H2: Section Subheading === */
 h2.custom-subheading {

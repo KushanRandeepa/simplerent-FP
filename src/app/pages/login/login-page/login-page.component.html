@@ -1,44 +1,73 @@
-<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-        <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company"
-            class="mx-auto h-10 w-auto" />
-        <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">Sign in to your account</h2>
+
+
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 bg-gray-50">
+  <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+    <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" 
+         alt="Your Company"
+         class="mx-auto h-10 w-auto" />
+    <h2 class="mt-10 text-center text-2xl font-bold tracking-tight text-gray-900">Sign in to your   account</h2>
+  </div>
+
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+    <form action="#" method="POST" class="space-y-6">
+     
+
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-900">Email address</label>
+        <div class="mt-2">
+          <input id="email" name="email" type="email" required autocomplete="email"
+                 class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 
+                 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 
+                 focus:-outline-offset-2 focus:outline-green-700 sm:text-sm" />
+        </div>
+      </div>
+
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-900">Password</label>
+        <div class="mt-2">
+          <input id="password" name="password" type="password" required autocomplete="new-password"
+                 class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 
+                 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 
+                 focus:-outline-offset-2 focus:outline-green-700 sm:text-sm" />
+        </div>
+      </div>
+
+      <div>
+        <button type="submit"
+                class="flex w-full justify-center rounded-xl btn-custom">
+          Sign in with Email
+        </button>
+      </div>
+    </form>
+
+    <div class="relative my-8">
+      <div class="absolute inset-0 flex items-center">
+        <div class="w-full border-t border-gray-300"></div>
+      </div>
+      <div class="relative flex justify-center text-sm">
+        <span class="bg-gray-50 px-2 text-gray-500">Or continue with</span>
+      </div>
     </div>
 
-    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form action="#" method="POST" class="space-y-6">
-            <div>
-                <label for="email" class="block text-sm/6 font-medium text-gray-900">Email address</label>
-                <div class="mt-2">
-                    <input id="email" type="email" name="email" required autocomplete="email"
-                        class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-green-700 sm:text-sm/6" />
-                </div>
-            </div>
-            <div>
-                <div class="">
-                    <label for="password" class="block text-sm/6 font-medium text-gray-900">Password</label>
-                </div>
-                <div class="mt-2">
-                    <input id="password" type="password" name="password" required autocomplete="current-password"
-                        class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-green-700 sm:text-sm/6" />
-                </div>
-                <div class="flex items-center justify-between">
-                    <div></div>
-                    <div class="text-sm mt-2">
-                        <a href="#" class="font-semibold text-teal-600 hover:text-teal-400">Forgot password?</a>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <button type="submit" class="flex w-full justify-center rounded-xl bg-yellow-500 px-3 py-1.5 text-sm/6 font-semibold
-                     text-white shadow-xs hover:bg-yellow-400 focus-visible:outline-2 focus-visible:outline-offset-2
-                      focus-visible:outline-green-500">Sign
-                    in</button>
-            </div>
-        </form>
-        <p class="mt-10 text-center text-sm/6 text-gray-500">
-            Not a member?
-            <a href="#" class="font-semibold text-teal-600 hover:text-teal-400"> sign up now</a>
-        </p>
+    <div class="space-y-3">
+      <button class="flex w-full items-center justify-center rounded-xl border border-gray-300 bg-white px-3 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">
+        <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="h-5 w-5 mr-2" alt="Google Logo">
+        Sign in with Google
+      </button>
+      <button class="flex w-full items-center justify-center rounded-xl border border-gray-300 bg-[#1877F2] px-3 py-2 text-sm font-semibold text-white hover:bg-[#166fe5]">
+        <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" class="h-5 w-5 mr-2 bg-white rounded-full" alt="Facebook Logo">
+        Sign in with Facebook
+      </button>
     </div>
+    <div class="mt-6">
+      <p class="text-center text-sm text-gray-500">
+        By signing up, you agree to our 
+        <a href="#" class="font-semibold text-teal-600 hover:text-teal-400">Terms of Service</a> and 
+        <a href="#" class="font-semibold text-teal-600 hover:text-teal-400">Privacy Policy</a>.
+      </p>
+    <p class="mt-10 text-center text-sm text-gray-500">
+      Already haven't an account?
+      <a href="#" class="font-semibold text-teal-600 hover:text-teal-400">Sign up</a>
+    </p>
+  </div>
 </div>
