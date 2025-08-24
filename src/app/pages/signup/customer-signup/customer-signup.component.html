@@ -8,17 +8,21 @@
   </div>
 
   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-    <form action="#" method="POST" class="space-y-6">
+    <form action="#" method="POST" class="space-y-6" [formGroup]="firstFormGroup" (ngSubmit)="onSubmit()">
       <div>
         <label for="email" class="block text-sm font-medium text-gray-900">Email address</label>
         <div class="mt-2">
-          <input id="email" name="email" type="email" required autocomplete="email" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 
+          <input id="email" name="email" type="email" required autocomplete="email" formControlName="email" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 
                  -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 
                  focus:-outline-offset-2 focus:outline-green-700 sm:text-sm" />
-        </div>
+       <p class="text-red-500"> @if (firstFormGroup.get('email')?.hasError('emailExists') &&
+                            firstFormGroup.get('email')?.touched) {
+                            Email already exists.
+                            }</p>
+                </div>
       </div>
       <div>
-        <button type="button" class="flex w-full justify-center rounded-xl btn-custom " routerLink="/signup-with-email">
+        <button type="submit" [disabled]="firstFormGroup.invalid || firstFormGroup.pending" class="flex w-full justify-center rounded-xl btn-custom ">
           Sign up with Email
         </button>
       </div>

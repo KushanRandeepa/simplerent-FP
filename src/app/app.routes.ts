@@ -36,7 +36,7 @@ export const routes: Routes = [
         ]
     },
     {
-        path: 'signup-with-email',
+        path: 'signup-with-email/:userEmail',
         component: SignUpWithEmailComponent
     }
     
