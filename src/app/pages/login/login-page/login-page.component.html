@@ -9,32 +9,52 @@
   </div>
 
   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-    <form action="#" method="POST" class="space-y-6">
+    <form action="#" method="POST" class="space-y-6" [formGroup]="loginForm">
      
 
       <div>
         <label for="email" class="block text-sm font-medium text-gray-900">Email address</label>
         <div class="mt-2">
-          <input id="email" name="email" type="email" required autocomplete="email"
+          <input id="email" name="email" type="email" required autocomplete="email" formControlName="username"
                  class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 
                  -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 
                  focus:-outline-offset-2 focus:outline-green-700 sm:text-sm" />
         </div>
+        <p class="text-red-600">
+           @if (loginForm.get('username')?.hasError('required') &&
+                            loginForm.get('username')?.touched) {
+                            Username is required.
+                            }
+                            @if (loginForm.get('username')?.hasError('minlength') &&
+                            loginForm.get('username')?.touched) {
+                            Username must be 3 characters long.
+                            }
+        </p>
       </div>
 
       <div>
         <label for="password" class="block text-sm font-medium text-gray-900">Password</label>
         <div class="mt-2">
-          <input id="password" name="password" type="password" required autocomplete="new-password"
+          <input id="password" name="password" type="password" required autocomplete="new-password" formControlName="password"
                  class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 
                  -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 
                  focus:-outline-offset-2 focus:outline-green-700 sm:text-sm" />
         </div>
+        <p class="text-red-600">
+           @if (loginForm.get('password')?.hasError('required') &&
+                            loginForm.get('password')?.touched) {
+                            Password is required.
+                            }
+                            @if (loginForm.get('password')?.hasError('minlength') &&
+                            loginForm.get('password')?.touched) {
+                            Password must be 6 characters long.
+                            }
+        </p>
       </div>
 
       <div>
         <button type="submit"
-                class="flex w-full justify-center rounded-xl btn-custom">
+                class="flex w-full justify-center rounded-xl btn-custom" (click)="onLogin()">
           Sign in with Email
         </button>
       </div>
@@ -67,7 +87,7 @@
       </p>
     <p class="mt-10 text-center text-sm text-gray-500">
       Already haven't an account?
-      <a href="#" class="font-semibold text-teal-600 hover:text-teal-400">Sign up</a>
+      <a href="/signup" class="font-semibold text-teal-600 hover:text-teal-400">Sign up</a>
     </p>
   </div>
 </div>

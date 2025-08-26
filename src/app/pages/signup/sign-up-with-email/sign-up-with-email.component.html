@@ -12,7 +12,7 @@
   </div>
 
   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-md">
-    <form action="#" method="POST" class="space-y-6">
+    <form action="#" method="POST" class="space-y-6" [formGroup]="firstFormGroup" (ngSubmit)="onSubmit()">
       <div>
         <label for="email" class="block text-sm font-medium text-gray-900">Email address</label>
         <div class="mt-2">
@@ -27,27 +27,52 @@
         <label for="password" class="block text-sm font-medium text-gray-900">New Password</label>
         <div class="mt-2">
           <input id="password" name="password" type="password" autocomplete="new-password"
-                 placeholder="••••••••"
+                 placeholder="••••••••" formControlName="newPassword"
                  class="block w-full rounded-lg bg-white px-3 py-2 text-base text-gray-900 
                  outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 
                  focus:outline-2 focus:-outline-offset-2 focus:outline-green-700 sm:text-sm" />
         </div>
+        <p class="text-red-600">
+           @if(firstFormGroup.get('newPassword')?.hasError('required') &&
+                            firstFormGroup.get('newPassword')?.touched){
+                            Password is required.
+                            }
+                            @if (firstFormGroup.get('newPassword')?.hasError('minlength') &&
+                            firstFormGroup.get('newPassword')?.touched) {
+                            Password must be at least 6 characters long.
+                            }
+                            @if (firstFormGroup.get('newPassword')?.hasError('pattern') &&
+                            firstFormGroup.get('newPassword')?.touched) {
+                            Password must contain at least one uppercase letter,lowercase letter and number.
+                            }
+        </p>
       </div>
 
       <div>
         <label for="confirm-password" class="block text-sm font-medium text-gray-900">Confirm Password</label>
         <div class="mt-2">
           <input id="confirm-password" name="confirm-password" type="password" autocomplete="new-password"
-                 placeholder="••••••••"
+                 placeholder="••••••••" formControlName="confirmPassword"
                  class="block w-full rounded-lg bg-white px-3 py-2 text-base text-gray-900 
                  outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 
                  focus:outline-2 focus:-outline-offset-2 focus:outline-green-700 sm:text-sm" />
         </div>
+        <p class="text-red-600">
+           @if(firstFormGroup.get('confirmPassword')?.hasError('required') &&
+                            firstFormGroup.get('confirmPassword')?.touched){
+                            Confirm password is required.
+                            }
+                            @if (firstFormGroup.get('confirmPassword')?.hasError('passwordMismatch') &&
+                            firstFormGroup.get('confirmPassword')?.touched) {
+                            Passwords do not match.
+                            }
+          
+        </p>
       </div>
 
       <div class="flex gap-4">
         <button type="submit"
-                class="flex-1 rounded-xl btn-custom" (click)="onSubmit()">
+                class="flex-1 rounded-xl btn-custom">
           submit
         </button>
       </div>

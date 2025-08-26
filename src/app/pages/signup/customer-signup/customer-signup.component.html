@@ -15,14 +15,23 @@
           <input id="email" name="email" type="email" required autocomplete="email" formControlName="email" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 
                  -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 
                  focus:-outline-offset-2 focus:outline-green-700 sm:text-sm" />
-       <p class="text-red-500"> @if (firstFormGroup.get('email')?.hasError('emailExists') &&
-                            firstFormGroup.get('email')?.touched) {
-                            Email already exists.
-                            }</p>
-                </div>
+          <p class="text-red-500">
+            @if (firstFormGroup.get('email')?.hasError('emailExists') &&
+            firstFormGroup.get('email')?.touched) {
+            Email already exists.
+            }
+          @if (firstFormGroup.get('email')?.hasError('required') &&
+          firstFormGroup.get('email')?.touched) {
+          Email is required.
+          }
+          @if(firstFormGroup.get('email')?.hasError('email') && firstFormGroup.get('email')?.touched){
+          Invalid email format.
+          }</p>
+        </div>
       </div>
       <div>
-        <button type="submit" [disabled]="firstFormGroup.invalid || firstFormGroup.pending" class="flex w-full justify-center rounded-xl btn-custom ">
+        <button type="submit" [disabled]="firstFormGroup.invalid || firstFormGroup.pending"
+          class="flex w-full justify-center rounded-xl btn-custom ">
           Sign up with Email
         </button>
       </div>
@@ -53,7 +62,7 @@
 
     <p class="mt-10 text-center text-sm text-gray-500">
       Already have an account?
-      <a href="#" class="font-semibold text-teal-600 hover:text-teal-400">Sign in</a>
+      <a href="/login"  class="font-semibold text-teal-600 hover:text-teal-400">Sign in</a>
     </p>
   </div>
 </div>
